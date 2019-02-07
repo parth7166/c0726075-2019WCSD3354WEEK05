@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _2019WCSD3354WEEK05
 {
@@ -11,10 +7,12 @@ namespace _2019WCSD3354WEEK05
         static void Main(string[] args)
         {
             var a = new TestQuestion2();
-            // a.PlayingWithForLoops();
+            //a.PlayingWithForLoops();
+
             var b = new birthday_party();
-            b.p();
+            b.setupPartyList();
             b.printPartyList();
+
         }
     }
 
@@ -25,7 +23,7 @@ namespace _2019WCSD3354WEEK05
         public void PlayingWithForLoops()
         {
             // write a For Loop to Add 10 Numbers
-            for (; MyMethod();)
+            while (MyMethod())
             {
                 if (myFavoriteVariable > 10)
                 {
@@ -40,7 +38,6 @@ namespace _2019WCSD3354WEEK05
             myFavoriteVariable++;
             return true;
         }
-
     }
 
     class dog
@@ -49,13 +46,19 @@ namespace _2019WCSD3354WEEK05
         {
             dog_name = name;
             dog_breed = breed;
-
         }
+
+        public dog()
+        {
+        }
+
         public string dog_name;
         public string dog_breed;
         public dog next_dog;
-        public dog previous_dog;
+        public dog prev_dog;
+
     }
+
     class birthday_party
     {
         public dog peanut;
@@ -66,40 +69,37 @@ namespace _2019WCSD3354WEEK05
         public dog head;
         public dog tail;
         public dog temporary;
-        public void p()
-        {
-            peanut = new dog("PEANUT", "BICHON");
-            fifi = new dog("FIFI", "POODLE");
-            clarence = new dog("CLARENCE", "GERMAN SHEPHARD");
-            roy = new dog("ROY", "BEAGLE");
 
-            peanut.previous_dog = null;
+        public void setupPartyList()
+        {
+            peanut = new dog("Peanut", "Bichon");
+            fifi = new dog("Fifi", "Poodle");
+            clarence = new dog("Clarence", "German Sheppard");
+            roy = new dog("Roy", "Beagle");
+
+            peanut.prev_dog = null;
             peanut.next_dog = fifi;
-            fifi.previous_dog = peanut;
+            fifi.prev_dog = peanut;
             fifi.next_dog = clarence;
-            clarence.previous_dog = fifi;
+            clarence.prev_dog = fifi;
             clarence.next_dog = roy;
-            roy.previous_dog = clarence;
+            roy.prev_dog = clarence;
             roy.next_dog = null;
             head = peanut;
             tail = roy;
-
         }
 
-        public void printPartyList(dog startoflist, dog endoflist)
+        public string printPartyList()
         {
-            string inviteList = "* --- *";
-            temporary = startoflist;
-            while (temporary.next_dog != null) 
+            string inviteList = "*--";
+            temporary = head;
+            while (temporary.next_dog != null)
             {
                 inviteList += temporary.dog_name + " * --- * ";
             }
+
             return inviteList;
         }
-
-    }
-}
-
 
     }
 }
