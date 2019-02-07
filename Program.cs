@@ -42,10 +42,11 @@ namespace _2019WCSD3354WEEK05
 
     class dog
     {
-        public dog(string name,string breed)
+        public dog(string name, string breed)
         {
             dog_name = name;
             dog_breed = breed;
+
         }
         public string dog_name;
         public string dog_breed;
@@ -62,6 +63,26 @@ namespace _2019WCSD3354WEEK05
         public dog head;
         public dog tail;
         public dog temporary;
+        public void p()
+        {
+            peanut = new dog("PEANUT", "BICHON");
+            fifi = new dog("FIFI", "POODLE");
+            clarence = new dog("CLARENCE", "GERMAN SHEPHARD");
+            roy = new dog("ROY", "BEAGLE");
+
+            peanut.previous_dog = null;
+            peanut.next_dog = fifi;
+            fifi.previous_dog = peanut;
+            fifi.next_dog = clarence;
+            clarence.previous_dog = fifi;
+            clarence.next_dog = roy;
+            roy.previous_dog = clarence;
+            roy.next_dog = null;
+            head = peanut;
+            tail = roy;
+
+        }
     }
 }
+
 
