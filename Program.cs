@@ -14,7 +14,7 @@ namespace _2019WCSD3354WEEK05
             // a.PlayingWithForLoops();
             var b = new birthday_party();
             b.p();
-            b.printpartylist();
+            b.printPartyList();
         }
     }
 
@@ -86,15 +86,20 @@ namespace _2019WCSD3354WEEK05
 
         }
 
-        public string printpartylist()
+        public void printPartyList(dog startoflist, dog endoflist)
         {
-            string inviteList = "***";
-            while(temporary.next_dog!=null)
+            string inviteList = "* --- *";
+            temporary = startoflist;
+            while (temporary.next_dog != null) 
             {
-                   
+                inviteList += temporary.dog_name + " * --- * ";
             }
             return inviteList;
         }
+
+    }
+}
+
 
     }
 }
