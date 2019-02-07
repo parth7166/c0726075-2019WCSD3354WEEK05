@@ -11,7 +11,10 @@ namespace _2019WCSD3354WEEK05
         static void Main(string[] args)
         {
             var a = new TestQuestion2();
-            a.PlayingWithForLoops();
+            // a.PlayingWithForLoops();
+            var b = new birthday_party();
+            b.p();
+            b.printpartylist();
         }
     }
 
@@ -82,7 +85,20 @@ namespace _2019WCSD3354WEEK05
             tail = roy;
 
         }
+
+        public string printpartylist()
+        {
+            string inviteList = "***";
+            while(temporary.next_dog!=null)
+            {
+                   
+            }
+            return inviteList;
+        }
+
     }
 }
+
+
 
 
