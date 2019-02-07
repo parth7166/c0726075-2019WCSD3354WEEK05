@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +37,31 @@ namespace _2019WCSD3354WEEK05
             myFavoriteVariable++;
             return true;
         }
+
+    }
+
+    class dog
+    {
+        public dog(string name,string breed)
+        {
+            dog_name = name;
+            dog_breed = breed;
+        }
+        public string dog_name;
+        public string dog_breed;
+        public dog next_dog;
+        public dog previous_dog;
+    }
+    class birthday_party
+    {
+        public dog peanut;
+        public dog fifi;
+        public dog clarence;
+        public dog roy;
+
+        public dog head;
+        public dog tail;
+        public dog temporary;
     }
 }
 
